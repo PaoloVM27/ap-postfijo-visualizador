@@ -187,24 +187,24 @@ Ejemplos:
 
 - **Ejemplo de entrada válida**
 
-![Expresión postfija válida: 5 3 + 2 *](./assets/valid-expression.png)
+![Expresión postfija válida: 5 1 2 + 4 * + 3 -](./assets/valid-expression.png)
 
 
 - **Ejemplo de entrada inválida**
 
-![Expresión postfija inválida: 5 3 + *](./assets/invalid-expression.png)
+![Expresión postfija inválida: 6 7 5 1 2 + 4 * + 3 -](./assets/invalid-expression.png)
 
 ## 🧑‍💻 Autores
 
 Este proyecto fue desarrollado por:
 
-- **Alexis Gonzales**
+- [**Alexis Gonzales**](https://github.com/Alsgh1103)
 
-- **Diego Sotelo**
+- [**Diego Sotelo**](https://github.com/floowxy)
 
-- **Paolo Villavicencio** - pvillavicencio05@gmail.com
+- [**Paolo Villavicencio**](https://github.com/PaoloVM27)
 
-- **Álvaro Salazar** - alvarosalazarzapata12sz@gmail.com
+- [**Álvaro Salazar**](https://github.com/Alcachofinha)
 
 ## 📄 Licencia
 
