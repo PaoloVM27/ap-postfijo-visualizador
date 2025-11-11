@@ -104,11 +104,11 @@ code .
 
 ## 4️⃣ Ejecutar el proyecto
 
-- En el explorador de archivos de VS Code, haz clic derecho sobre `index.html`.
+**1.** En el explorador de archivos de VS Code, haz clic derecho sobre `index.html`.
 
-- Selecciona "Open with Live Server".
+**2.** Selecciona "Open with Live Server".
 
-- El navegador se abrirá automáticamente (por ejemplo en:
+**3.** El navegador se abrirá automáticamente (por ejemplo en:
 
 `http://127.0.0.1:5500` o `http://localhost:5500).`
 
@@ -131,40 +131,38 @@ code .
 
 Ejemplos:
 
-✅ Expresión válida:
-5 3 + 2 * → Resultado esperado: 16.
+**✅ Expresión válida:**
+  - `5 3 + 2 *` → Resultado esperado: `16`.
 
-❌ Expresión inválida:
-5 3 + * → Error por operandos insuficientes.
+**❌ Expresión inválida:**
+  - `5 3 + *` → Error por operandos insuficientes.
 
-📸 Capturas de Pantalla
+##📸 Capturas de Pantalla
 
-💡 Recomendación: agrega aquí 2–3 imágenes o un GIF del proyecto en acción.
+**Ejemplos**
 
-Ejemplos (rellena con tus rutas de imagen reales):
-
-Ejemplo de entrada válida
+- **Ejemplo de entrada válida**
 
 ![Expresión postfija válida: 5 3 + 2 *](./assets/valid-expression.png)
 
 
-Ejemplo de entrada inválida
+- **Ejemplo de entrada inválida**
 
 ![Expresión postfija inválida: 5 3 + *](./assets/invalid-expression.png)
 
-🧑‍💻 Autores
+## 🧑‍💻 Autores
 
 Este proyecto fue desarrollado por:
 
-Alexis Gonzales
+- **Alexis Gonzales**
 
-Diego Sotelo
+- **Diego Sotelo**
 
-Paolo Villavicencio
+- **Paolo Villavicencio**
 
-Álvaro Salazar
+- **Álvaro Salazar**
 
-📄 Licencia
+## 📄 Licencia
 
 Este proyecto se distribuye bajo la licencia indicada en el archivo LICENSE de este repositorio.
 Si aún no la has definido, una opción común es la licencia MIT.
