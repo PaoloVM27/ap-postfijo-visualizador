@@ -33,37 +33,35 @@ Este proyecto fue desarrollado como **trabajo final** para el curso de **Teoría
 ---
 ## 🧠 Modelo Matemático del Autómata de Pila (AP)
 
-El funcionamiento del evaluador se fundamenta en un **Autómata de Pila** definido formalmente mediante la séptupla:
+El evaluador se basa en un **Autómata de Pila**, definido mediante la séptupla:
 
-\[
-M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)
-\]
+**M = (Q, Σ, Γ, δ, q₀, Z₀, F)**
 
 ### Definiciones de la Séptupla
 
-| Símbolo | Definición | Descripción |
-|--------|------------|-------------|
-| \(Q = \{ q_1 \}\) | Conjunto de estados | El autómata utiliza un único estado operativo |
-| \(\Sigma = \{ V, +, -, *, / \}\) | Alfabeto de entrada | `V` representa cualquier **operando numérico** |
-| \(\Gamma = \{ X, Z_0 \}\) | Alfabeto de la pila | `X` representa un operando almacenado en la pila |
-| \(q_0 = q_1\) | Estado inicial | El autómata comienza en `q₁` |
-| \(Z_0\) | Símbolo de fondo de pila | Marca el inicio y la base de la pila |
-| \(F = \varnothing\) | Conjunto de aceptación | La **aceptación se da cuando la pila queda vacía** |
+| Símbolo | Nombre | Descripción |
+|--------|--------|-------------|
+| **Q = { q₁ }** | Conjunto de estados | El autómata trabaja con un único estado |
+| **Σ = { V, +, -, *, / }** | Alfabeto de entrada | `V` representa cualquier **operando numérico** |
+| **Γ = { X, Z₀ }** | Alfabeto de la pila | `X` representa un operando almacenado en la pila |
+| **q₀ = q₁** | Estado inicial | El autómata comienza en `q₁` |
+| **Z₀** | Símbolo inicial de pila | Marca la base de la pila |
+| **F = ∅** | Conjunto de aceptación | La aceptación se da cuando la **pila queda vacía** |
 
 ---
 
-### 🔁 Función de Transición \( \delta \)
+### 🔁 Función de Transición δ
 
-| Transición | Acción en la pila | Interpretación |
-|-----------|------------------|----------------|
-| \( \delta(q_1, \varepsilon, Z_0) = (q_1, Z_0) \) | No cambia | Inicialización |
-| \( \delta(q_1, V, Z_0) = (q_1, XZ_0) \) | Apilar X sobre Z₀ | Primer operando |
-| \( \delta(q_1, V, X) = (q_1, XX) \) | Apilar X | Operandos sucesivos |
-| \( \delta(q_1, +, XX) = (q_1, X) \) | Desapilar 2, apilar 1 | Suma |
-| \( \delta(q_1, -, XX) = (q_1, X) \) | Desapilar 2, apilar 1 | Resta |
-| \( \delta(q_1, *, XX) = (q_1, X) \) | Desapilar 2, apilar 1 | Multiplicación |
-| \( \delta(q_1, /, XX) = (q_1, X) \) | Desapilar 2, apilar 1 | División |
-| \( \delta(q_1, \varepsilon, XZ_0) = (q_1, \varepsilon) \) | Vacía completamente | **Aceptación** 🎉 |
+| Transición | Acción en la pila | Descripción |
+|-----------|------------------|-------------|
+| δ(q₁, ε, Z₀) → (q₁, Z₀) | No cambia | Inicialización |
+| δ(q₁, V, Z₀) → (q₁, XZ₀) | Apilar X | Primer operando |
+| δ(q₁, V, X) → (q₁, XX) | Apilar X | Operandos sucesivos |
+| δ(q₁, +, XX) → (q₁, X) | Desapilar 2 y apilar 1 | Suma |
+| δ(q₁, -, XX) → (q₁, X) | Desapilar 2 y apilar 1 | Resta |
+| δ(q₁, *, XX) → (q₁, X) | Desapilar 2 y apilar 1 | Multiplicación |
+| δ(q₁, /, XX) → (q₁, X) | Desapilar 2 y apilar 1 | División |
+| δ(q₁, ε, XZ₀) → (q₁, ε) | Vacía pila | **Aceptación** ✅ |
 
 ---
 
