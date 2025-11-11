@@ -96,11 +96,11 @@ code .
 ```
 ## 3️⃣ Instalar la extensión `Live Server` (una sola vez)
 
-  - Abre la pestaña Extensiones `(Ctrl + Shift + X)`.
+- Abre la pestaña Extensiones `(Ctrl + Shift + X)`.
 
-  - Busca `Live Server` (autor: Ritwick Dey).
-  
-  - Haz clic en "Instalar".
+- Busca `Live Server` (autor: Ritwick Dey).
+
+- Haz clic en "Instalar".
 
 ## 4️⃣ Ejecutar el proyecto
 
