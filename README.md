@@ -94,25 +94,23 @@ cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 code .
 ```
-## 3️⃣ Instalar la extensión Live Server (una sola vez)
+## 3️⃣ Instalar la extensión `Live Server` (una sola vez)
 
-  - Abre la pestaña Extensiones (Ctrl + Shift + X).
+  - Abre la pestaña Extensiones `(Ctrl + Shift + X)`.
 
-  - Busca "Live Server" (autor: Ritwick Dey).
+  - Busca `Live Server` (autor: Ritwick Dey).
   
   - Haz clic en "Instalar".
 
-4️⃣ Ejecutar el proyecto
+## 4️⃣ Ejecutar el proyecto
 
-En el explorador de archivos de VS Code, haz clic derecho sobre index.html.
+- En el explorador de archivos de VS Code, haz clic derecho sobre `index.html`.
 
-Selecciona "Open with Live Server".
+- Selecciona "Open with Live Server".
 
-El navegador se abrirá automáticamente (por ejemplo en:
+- El navegador se abrirá automáticamente (por ejemplo en:
 
-http://127.0.0.1:5500
-
-http://localhost:5500).
+`http://127.0.0.1:5500` o `http://localhost:5500).`
 
 👀 Uso Básico
 
