@@ -187,12 +187,12 @@ Ejemplos:
 
 - **Ejemplo de entrada válida**
 
-![Expresión postfija válida: 5 1 2 + 4 * + 3 -](capture/valid-expression.png)
+![Expresión postfija válida: 5 1 2 + 4 * + 3 -](captures/valid-expression.png)
 
 
 - **Ejemplo de entrada inválida**
 
-![Expresión postfija inválida: 6 7 5 1 2 + 4 * + 3 -](capture/invalid-expression.png)
+![Expresión postfija inválida: 6 7 5 1 2 + 4 * + 3 -](captures/invalid-expression.png)
 
 ## 🧑‍💻 Autores
 
