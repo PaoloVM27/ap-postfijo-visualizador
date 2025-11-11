@@ -82,25 +82,25 @@ https://paolovm27.github.io/Evaluador-y-Validador-Postfijo-con-Automata-de-Pila/
 ```
 ## ⚡ OPCION B: Instalación y Ejecución
 
-### 1️⃣ Clonar el repositorio
+## 1️⃣ Clonar el repositorio
 
 ```bash
 git clone https://github.com/PaoloVM27/Evaluador-y-Validador-Postfijo-con-Automata-de-Pila.git
 
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 ```
-2️⃣ Abrir el proyecto en Visual Studio Code
+## 2️⃣ Abrir el proyecto en Visual Studio Code
 ```bash
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 code .
 ```
-3️⃣ Instalar la extensión Live Server (una sola vez)
+## 3️⃣ Instalar la extensión Live Server (una sola vez)
 
--Abre la pestaña Extensiones (Ctrl + Shift + X).
+  -Abre la pestaña Extensiones (Ctrl + Shift + X).
 
--Busca "Live Server" (autor: Ritwick Dey).
-
--Haz clic en "Instalar".
+  -Busca "Live Server" (autor: Ritwick Dey).
+  
+  -Haz clic en "Instalar".
 
 4️⃣ Ejecutar el proyecto
 
