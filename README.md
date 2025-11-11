@@ -204,7 +204,7 @@ Este proyecto fue desarrollado por:
 
 - **Paolo Villavicencio** - pvillavicencio05@gmail.com
 
-- **Álvaro Salazar**
+- **Álvaro Salazar** - alvarosalazarzapata12sz@gmail.com
 
 ## 📄 Licencia
 
