@@ -202,7 +202,7 @@ Este proyecto fue desarrollado por:
 
 - **Diego Sotelo**
 
-- **Paolo Villavicencio**
+- **Paolo Villavicencio** - @pvillavicencio05@gmail.com
 
 - **Álvaro Salazar**
 
