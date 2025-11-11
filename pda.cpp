@@ -1,4 +1,3 @@
-// pda.cpp
 #include <vector>
 #include <string>
 #include <sstream>
@@ -11,7 +10,6 @@
 
 static std::string lastLog;
 
-// Convierte pila de chars a string legible, ej: [Z,X,X]
 std::string stackToString(const std::vector<char>& st) {
     if (st.empty()) return "[]";
     std::ostringstream oss;
@@ -24,7 +22,6 @@ std::string stackToString(const std::vector<char>& st) {
     return oss.str();
 }
 
-// Convierte pila numérica a string, ej: [5,3,8]
 std::string stackToString(const std::vector<double>& st) {
     if (st.empty()) return "[]";
     std::ostringstream oss;
@@ -41,15 +38,13 @@ bool esOperador(const std::string& t) {
     return t == "+" || t == "-" || t == "*" || t == "/";
 }
 
-// Intenta parsear número (entero o decimal). Devuelve true si es número válido.
 bool esNumero(const std::string& t, double& out) {
     if (t.empty()) return false;
     char* endPtr = nullptr;
     out = std::strtod(t.c_str(), &endPtr);
     if (endPtr == t.c_str()) {
-        return false; // no se parseó nada
+        return false; 
     }
-    // Ignorar espacios finales
     while (*endPtr != '\0') {
         if (!std::isspace(static_cast<unsigned char>(*endPtr))) {
             return false;
@@ -61,16 +56,15 @@ bool esNumero(const std::string& t, double& out) {
 
 extern "C" {
 
-// Recibe la expresión postfija como string y devuelve un log en formato de texto.
 EMSCRIPTEN_KEEPALIVE
 const char* simular_postfijo(const char* expr) {
     std::string input = expr ? std::string(expr) : std::string();
     std::istringstream iss(input);
     std::string token;
 
-    std::vector<char> pilaGamma;      // Pila de símbolos: Z base, X por operando
-    std::vector<double> pilaNum;      // Pila numérica
-    pilaGamma.push_back('Z');         // Símbolo inicial Z0
+    std::vector<char> pilaGamma;
+    std::vector<double> pilaNum; 
+    pilaGamma.push_back('Z');    
 
     bool error = false;
     std::string tipoError = "ok";
@@ -187,4 +181,5 @@ const char* simular_postfijo(const char* expr) {
     return lastLog.c_str();
 }
 
-} // extern "C"
+
+} 
