@@ -114,20 +114,20 @@ code .
 
 ## 👀 Uso Básico
 
-  1. Ingresa una expresión en Notación Postfija, por ejemplo:
+**1.** Ingresa una expresión en Notación Postfija, por ejemplo:
 ```bash
 5 3 + 2 *
 ```
 
-  2. Presiona el botón `Evaluar` (o equivalente en la interfaz).
+**2.** Presiona el botón `Evaluar` (o equivalente en la interfaz).
 
-  3. El sistema:
+**3.** El sistema:
 
-- Validará la expresión con el Autómata de Pila.
+  - Validará la expresión con el Autómata de Pila.
 
-- Mostrará si es válida o inválida.
+  - Mostrará si es válida o inválida.
 
-- En caso válido, mostrará el resultado numérico.
+  - En caso válido, mostrará el resultado numérico.
 
 Ejemplos:
 
