@@ -208,5 +208,9 @@ Este proyecto fue desarrollado por:
 
 ## 📄 Licencia
 
-Este proyecto se distribuye bajo la licencia indicada en el archivo LICENSE de este repositorio.
-Si aún no la has definido, una opción común es la licencia MIT.
+Este proyecto está licenciado bajo la **Licencia MIT**.
+
+Copyright (c) 2025 **Paolo Villavicencio Merella**
+
+El texto completo de la licencia se encuentra en el archivo [`LICENSE`](./LICENSE) de este repositorio.
+
