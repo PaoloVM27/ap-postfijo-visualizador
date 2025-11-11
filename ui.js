@@ -1,12 +1,9 @@
-// ui.js
-
-let pasos = [];          // arreglo de pasos [ {paso, token, ...}, ... ]
-let pasoActual = -1;     // índice del paso actual
-let statusFinal = null;  // "ok", "error_sintactico", "error_aritmetico"
+let pasos = [];
+let pasoActual = -1;
+let statusFinal = null;
 let resultadoFinal = null;
 let mensajeFinal = "";
 
-// Referencias a elementos del DOM
 const inputExpr = document.getElementById("expr");
 const btnRun = document.getElementById("btn-run");
 const btnPrev = document.getElementById("btn-prev");
@@ -19,7 +16,6 @@ const textoEstado = document.getElementById("texto-estado");
 const textoResultado = document.getElementById("texto-resultado");
 const tbodyBitacora = document.querySelector("#tabla-bitacora tbody");
 
-// Esta función la llamamos cuando el runtime de Emscripten ya está listo.
 function inicializarUI() {
   btnRun.addEventListener("click", () => {
     const expr = inputExpr.value.trim();
@@ -55,7 +51,6 @@ function inicializarUI() {
   limpiarEstado();
 }
 
-// Limpia todos los paneles
 function limpiarEstado() {
   pasos = [];
   pasoActual = -1;
@@ -74,19 +69,16 @@ function limpiarEstado() {
   btnNext.disabled = true;
 }
 
-// Ejecuta la simulación llamando a la función C++ simular_postfijo
 function ejecutarSimulacion(expr) {
   limpiarEstado();
 
-  // Llamamos a simular_postfijo desde C++ (pda.cpp)
   const log = Module.ccall(
-    "simular_postfijo", // nombre de la función en C++
-    "string",           // tipo de retorno
-    ["string"],         // tipos de parámetros
-    [expr]              // valores de parámetros
+    "simular_postfijo",
+    "string",
+    ["string"],
+    [expr]
   );
 
-  // Parseamos el log
   parsearLog(log);
   construirTablaBitacora();
 
@@ -97,12 +89,10 @@ function ejecutarSimulacion(expr) {
   actualizarBotonesNavegacion();
 }
 
-// Parsea el string de log que viene de C++
 function parsearLog(log) {
   const lineas = log.split("\n").filter(l => l.trim() !== "");
   if (lineas.length === 0) return;
 
-  // Primera línea: STATUS;tipo;RESULT;valor;MSG;mensaje
   const header = lineas[0].split(";");
   if (header.length >= 6 && header[0] === "STATUS") {
     statusFinal = header[1];
@@ -126,7 +116,6 @@ function parsearLog(log) {
     textoResultado.textContent = "—";
   }
 
-  // Resto de líneas: pasos
   pasos = [];
   for (let i = 1; i < lineas.length; i++) {
     const cols = lineas[i].split(";");
@@ -144,7 +133,6 @@ function parsearLog(log) {
   }
 }
 
-// Construye la tabla completa de bitácora
 function construirTablaBitacora() {
   tbodyBitacora.innerHTML = "";
   for (const p of pasos) {
@@ -163,30 +151,22 @@ function construirTablaBitacora() {
   }
 }
 
-// Muestra un paso concreto en las pilas y resalta la fila
 function mostrarPaso(indice) {
   if (indice < 0 || indice >= pasos.length) return;
   const p = pasos[indice];
 
-  // Pila Γ después del paso
   dibujarPila(p.pilaGDespues, pilaGammaDiv);
-  // Pila numérica después del paso
   dibujarPila(p.pilaNDespues, pilaNumDiv);
 
-  // Resaltar fila activa
   const filas = tbodyBitacora.querySelectorAll("tr");
   filas.forEach(f => f.classList.remove("activo"));
   const filaActiva = tbodyBitacora.querySelector(`tr[data-paso="${p.numPaso}"]`);
   if (filaActiva) {
     filaActiva.classList.add("activo");
-    // scroll suave hacia esa fila
     filaActiva.scrollIntoView({ behavior: "smooth", block: "center" });
   }
 }
 
-// --- PILA → JSON --------------------------------------------------
-// Convierte el string "[Z,X,X]" en un arreglo JSON:
-// [{valor:"Z", index:0}, {valor:"X", index:1}, ...]
 function pilaTextoAJson(textoPila) {
   const limpio = textoPila.replace(/[\[\]\s]/g, "");
   if (!limpio) return [];
@@ -194,21 +174,18 @@ function pilaTextoAJson(textoPila) {
   const elementos = limpio.split(",").filter(e => e !== "");
   return elementos.map((el, idx) => ({
     valor: el,
-    index: idx, // 0 = base
+    index: idx,
   }));
 }
 
-// Convierte un string de pila tipo "[Z,X,X]" en bloques visuales
 function dibujarPila(textoPila, contenedor) {
   contenedor.innerHTML = "";
 
   const modelo = pilaTextoAJson(textoPila);
   if (modelo.length === 0) return;
 
-  // ponemos la clase de contenedor 3D
   contenedor.classList.add("pila-contenedor-3d");
 
-  // flex-direction: column-reverse hace que el último quede abajo
   modelo.forEach((celda) => {
     const cubo = document.createElement("div");
     cubo.className = "pila-cubo";
@@ -222,7 +199,6 @@ function dibujarPila(textoPila, contenedor) {
   });
 }
 
-// Habilita / deshabilita botones Anterior / Siguiente
 function actualizarBotonesNavegacion() {
   if (pasos.length === 0) {
     btnPrev.disabled = true;
@@ -234,15 +210,12 @@ function actualizarBotonesNavegacion() {
   btnNext.disabled = (pasoActual >= pasos.length - 1);
 }
 
-// Esperamos a que Emscripten cargue
 if (typeof Module !== "undefined") {
-  // Emscripten define Module; le podemos asignar onRuntimeInitialized
   Module.onRuntimeInitialized = () => {
     inicializarUI();
   };
 } else {
-  // Si por alguna razón Module no existe (p.ej. error de carga),
-  // inicializamos solo la UI sin C++ (no funcionará la simulación).
   console.error("No se pudo encontrar Module de Emscripten.");
   inicializarUI();
 }
+
