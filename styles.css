@@ -1,0 +1,202 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: #050816;
+  color: #e5e7eb;
+}
+
+h1 {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+section {
+  margin: 1rem auto;
+  max-width: 1200px;
+}
+
+.panel-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.panel-input input {
+  min-width: 280px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #4b5563;
+  background: #020617;
+  color: #e5e7eb;
+}
+
+.panel-input button {
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #2563eb;
+  color: white;
+  font-weight: 500;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.1s ease;
+}
+
+.panel-input button:disabled {
+  background: #4b5563;
+  cursor: default;
+  box-shadow: none;
+  transform: none;
+}
+
+.panel-input button:not(:disabled):hover {
+  background: #1d4ed8;
+  box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Tarjetas generales */
+
+.card {
+  background: radial-gradient(circle at top left, #1f2937, #020617);
+  border-radius: 14px;
+  padding: 1rem;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+/* Panel estado + resultado */
+
+#panel-estado {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+#panel-estado .card {
+  flex: 1 1 280px;
+}
+
+/* Pilas */
+
+/* Panel de pilas */
+#panel-pilas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.pila {
+  flex: 1 1 280px;
+}
+
+/* Contenedor base de pila */
+.pila-contenedor {
+  /* vacío; lo usamos como class base */
+}
+
+/* Contenedor en modo 3D */
+.pila-contenedor-3d {
+  margin-top: 0.8rem;
+  min-height: 180px;
+  padding: 0.75rem 0.25rem;
+
+  display: flex;
+  flex-direction: column-reverse; /* cima visual arriba */
+  align-items: center;
+  gap: 6px;
+
+  border: 2px solid rgba(148, 163, 184, 0.7);
+  border-radius: 6px;
+  background: rgba(15, 23, 42, 0.95);
+}
+
+/* Cubo 3D "falso" (isométrico) */
+.pila-cubo {
+  position: relative;
+  width: 60px;   /* ancho cara frontal */
+  height: 28px;  /* alto cara frontal */
+
+  background: #1d4ed8;
+  border: 1px solid #0f172a;
+  box-shadow: 0 8px 14px rgba(0, 0, 0, 0.7);
+}
+
+/* Cara superior */
+.pila-cubo::before {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 0;
+  width: 100%;
+  height: 12px;
+  background: #3b82f6;
+  border: 1px solid #0f172a;
+  border-bottom: none;
+  transform-origin: bottom left;
+  transform: skewX(-45deg);
+}
+
+/* Cara lateral derecha */
+.pila-cubo::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  right: -12px;
+  width: 12px;
+  height: 100%;
+  background: #1d4ed8;
+  border: 1px solid #0f172a;
+  border-left: none;
+  transform-origin: top right;
+  transform: skewY(-45deg);
+}
+
+/* Etiqueta (X, Z, número) en la cara frontal */
+.pila-cubo-label {
+  position: relative; /* por encima de ::before/::after */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  color: #e5e7eb;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+/* Bitácora */
+
+#panel-bitacora {
+  overflow-x: auto;
+}
+
+#tabla-bitacora {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+#tabla-bitacora thead {
+  background: rgba(15, 23, 42, 0.8);
+}
+
+#tabla-bitacora th,
+#tabla-bitacora td {
+  padding: 0.35rem 0.5rem;
+  border-bottom: 1px solid rgba(55, 65, 81, 0.7);
+}
+
+#tabla-bitacora tbody tr:nth-child(even) {
+  background: rgba(15, 23, 42, 0.5);
+}
+
+#tabla-bitacora tbody tr.activo {
+  background: rgba(59, 130, 246, 0.3);
+}

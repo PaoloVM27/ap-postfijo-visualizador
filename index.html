@@ -1,0 +1,70 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Visualizador de Autómata de Pila (Postfijo)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <h1>Visualizador del Autómata de Pila para Expresiones Postfijas</h1>
+
+  <section class="panel-input">
+    <label for="expr">Expresión postfija:</label>
+    <input id="expr" type="text" placeholder="Ej: 5 1 2 + 4 * + 3 -" />
+    <button id="btn-run">Cargar</button>
+    <button id="btn-prev" disabled>Anterior</button>
+    <button id="btn-next" disabled>Siguiente</button>
+    <button id="btn-reset">Reiniciar</button>
+  </section>
+
+  <section id="panel-estado">
+    <div id="estado-automata" class="card">
+      <h2>Estado del Autómata</h2>
+      <p id="texto-estado">Esperando expresión...</p>
+    </div>
+
+    <div id="resultado" class="card">
+      <h2>Resultado</h2>
+      <p id="texto-resultado">—</p>
+    </div>
+  </section>
+
+  <section id="panel-pilas">
+    <div class="pila card">
+      <h2>Pila Γ (símbolos)</h2>
+      <div id="pila-gamma" class="pila-contenedor"></div>
+    </div>
+
+    <div class="pila card">
+      <h2>Pila Numérica</h2>
+      <div id="pila-num" class="pila-contenedor"></div>
+    </div>
+  </section>
+
+  <section id="panel-bitacora" class="card">
+    <h2>Bitácora de pasos</h2>
+    <table id="tabla-bitacora">
+      <thead>
+        <tr>
+          <th>Paso</th>
+          <th>Símbolo</th>
+          <th>Γ antes</th>
+          <th>Γ después</th>
+          <th>Pila num. antes</th>
+          <th>Pila num. después</th>
+          <th>Descripción</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Se llena dinámicamente -->
+      </tbody>
+    </table>
+  </section>
+
+  <!-- Carga del módulo generado por Emscripten -->
+  <script src="pda.js"></script>
+  <!-- Lógica de la interfaz -->
+  <script src="ui.js"></script>
+</body>
+</html>
