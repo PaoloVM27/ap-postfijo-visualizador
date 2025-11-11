@@ -76,26 +76,31 @@ Este proyecto fue desarrollado como **trabajo final** para el curso de **Teoría
   - Autómata de Pila (AP)
 
 ---
-
-## ⚡ Instalación y Ejecución
+## ✈️ OPCIÓN A: VISUALIZAR LA APP SIN INSTALAR
+```bash
+https://paolovm27.github.io/Evaluador-y-Validador-Postfijo-con-Automata-de-Pila/
+```
+## ⚡ OPCION B: Instalación y Ejecución
 
 ### 1️⃣ Clonar el repositorio
 
 ```bash
-git clone https://github.com/floowxy/Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-.git
+git clone https://github.com/PaoloVM27/Evaluador-y-Validador-Postfijo-con-Automata-de-Pila.git
 
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 ```
 2️⃣ Abrir el proyecto en Visual Studio Code
+```bash
+cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 code .
-
+```
 3️⃣ Instalar la extensión Live Server (una sola vez)
 
-Abre la pestaña Extensiones (Ctrl + Shift + X).
+-Abre la pestaña Extensiones (Ctrl + Shift + X).
 
-Busca "Live Server" (autor: Ritwick Dey).
+-Busca "Live Server" (autor: Ritwick Dey).
 
-Haz clic en "Instalar".
+-Haz clic en "Instalar".
 
 4️⃣ Ejecutar el proyecto
 
