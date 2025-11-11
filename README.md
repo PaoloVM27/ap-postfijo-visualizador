@@ -89,7 +89,7 @@ git clone https://github.com/PaoloVM27/Evaluador-y-Validador-Postfijo-con-Automa
 
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 ```
-## 2️⃣ Abrir el proyecto en Visual Studio Code
+## 2️⃣ Abrir el proyecto en `Visual Studio Code`
 ```bash
 cd Postfix-Evaluator-and-Validator-with-Pushdown-Automaton-PA-
 code .
