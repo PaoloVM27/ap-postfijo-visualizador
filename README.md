@@ -214,3 +214,47 @@ Copyright (c) 2025 **Paolo Villavicencio Merella**
 
 El texto completo de la licencia se encuentra en el archivo [`LICENSE`](./LICENSE) de este repositorio.
 
+# 🧮 Calculadora RPN Interactiva
+
+> Una implementación robusta, modular y eficiente de una calculadora de **Notación Polaca Inversa (Reverse Polish Notation)** escrita en **C**.
+
+![Language](https://img.shields.io/badge/Lenguaje-C-00599C?style=flat-square&logo=c&logoColor=white)
+![Build](https://img.shields.io/badge/Build-Make-orange?style=flat-square)
+![Type](https://img.shields.io/badge/Type-CLI-black?style=flat-square)
+
+---
+
+## 📖 Descripción
+
+Este proyecto consiste en un evaluador de expresiones matemáticas que utiliza una **pila (stack)** dinámica para procesar operaciones en tiempo real. A diferencia de las calculadoras tradicionales, el formato RPN elimina la necesidad de paréntesis, haciendo el cálculo computacionalmente más eficiente y lógico.
+
+El sistema está diseñado para ser **interactivo**, permitiendo al usuario visualizar el estado de la memoria (la pila) después de cada ingreso de datos.
+
+## ✨ Características Principales
+
+* **Arquitectura Modular:** Código separado en lógica de pila (`stack`), utilidades (`utils`) y programa principal (`main`).
+* **Visualización en Tiempo Real:** Muestra el contenido de la pila paso a paso.
+* **Formato Inteligente:** Muestra decimales solo cuando es necesario (ej: muestra `5` en lugar de `5.000000` y `2.5` si hay decimales).
+* **Manejo de Errores:** Sistema de "Muerte Súbita" que detecta y reporta:
+    * División por cero.
+    * Desbordamiento de pila (Stack Overflow).
+    * Sintaxis inválida (ej: letras mezcladas con números).
+    * Insuficiencia de operandos.
+
+---
+
+## 📂 Estructura del Proyecto
+
+El código sigue una estructura estándar de la industria para facilitar su mantenimiento y escalabilidad:
+
+```text
+rpn-calculator/
+├── include/        # Archivos de cabecera (.h)
+│   ├── stack.h     # Definiciones de la Pila
+│   └── utils.h     # Funciones auxiliares y validaciones
+├── src/            # Código fuente (.c)
+│   ├── main.c      # Punto de entrada y bucle principal
+│   ├── stack.c     # Lógica de las operaciones de la pila
+│   └── utils.c     # Implementación de formateo y helpers
+├── Makefile        # Script de compilación automatizada
+└── README.md       # Documentación del proyecto
